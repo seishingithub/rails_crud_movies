@@ -32,4 +32,20 @@ feature 'Manage Movies' do
     expect(page).to have_no_content 'Gone With the Wind'
     expect(page).to have_no_content 'Clark Gable'
   end
+
+  scenario 'User can delete movie from list' do
+    visit '/'
+    click_on 'Add a movie'
+    fill_in 'Title', with: 'Gone With the Wind'
+    fill_in 'Actor', with: 'Clark Gable'
+    click_on 'Create a movie'
+    expect(page).to have_content 'Gone With the Wind'
+    expect(page).to have_content 'Clark Gable'
+    click_on 'Gone With the Wind'
+    expect(page).to have_content 'Gone With the Wind'
+    expect(page).to have_content 'Clark Gable'
+    click_on 'Delete'
+    expect(page).to have_no_content 'Gone With the Wind'
+    expect(page).to have_no_content 'Clark Gable'
+  end
 end

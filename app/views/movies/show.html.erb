@@ -6,4 +6,5 @@
   </li>
 </ul>
 
-<%= link_to 'Edit', edit_movie_path %>
+<%= link_to 'Edit', edit_movie_path(@movie) %>
+<%= link_to 'Delete', movie_path(@movie), method: :delete %>
