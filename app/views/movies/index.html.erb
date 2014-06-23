@@ -15,7 +15,7 @@
 <% @movies.each do |movie| %>
   <ul>
     <li>
-      <%= movie.title %>
+      <%= link_to "#{movie.title}", movie_path(movie) %>
       <br>
       <%= movie.actor %>
     </li>
