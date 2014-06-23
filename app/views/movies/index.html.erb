@@ -1,0 +1,23 @@
+<%= form_for @movie do |f| %>
+  <p>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    <%= f.label :actor %>
+    <%= f.text_field :actor %>
+  </p>
+  <p>
+    <%= f.submit 'Create a movie' %>
+  </p>
+<% end %>
+
+<% @movies.each do |movie| %>
+  <ul>
+    <li>
+      <%= movie.title %>
+      <br>
+      <%= movie.actor %>
+    </li>
+  </ul>
+<% end %>
